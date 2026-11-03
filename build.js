@@ -54,12 +54,5 @@ for (const dir of dirsToCopy) {
   }
 }
 
-// 4. Create public/workspace/index.html (clean /workspace route without collision)
-const workspaceDir = path.join(publicDir, 'workspace');
-fs.mkdirSync(workspaceDir, { recursive: true });
-const wsHtml = path.join(rootDir, 'workspace.html');
-if (fs.existsSync(wsHtml)) {
-  fs.copyFileSync(wsHtml, path.join(workspaceDir, 'index.html'));
-}
-
+// 4. Finished
 console.log('Build completed successfully into public/ directory!');

@@ -21,7 +21,6 @@ PIKA_DIR = os.path.join(BASE_DIR, "pika.art")
 CDN_DIR = os.path.join(BASE_DIR, "cdn.pika.art")
 POSTHOG_ASSETS_DIR = os.path.join(BASE_DIR, "us-assets.i.posthog.com")
 POSTHOG_DIR = os.path.join(BASE_DIR, "us.i.posthog.com")
-WORKSPACE_HTML = os.path.join(BASE_DIR, "workspace.html")
 
 mimetypes.init()
 mimetypes.add_type("application/javascript", ".js")
@@ -117,11 +116,12 @@ class PikaReplicationHandler(BaseHTTPRequestHandler):
         path = urllib.parse.unquote(parsed.path)
         query = parsed.query
 
-        # AI Software Development Workspace Studio
+        # Legacy workspace redirect to apps section
         if path == "/workspace" or path.startswith("/workspace"):
-            if os.path.isfile(WORKSPACE_HTML):
-                self.serve_file(WORKSPACE_HTML, content_type="text/html; charset=utf-8")
-                return
+            self.send_response(302)
+            self.send_header("Location", "/#apps")
+            self.end_headers()
+            return
 
         # Enterprise use case route
         if path.startswith("/use-cases"):
