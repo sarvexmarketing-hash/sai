@@ -8,3 +8,5 @@ dist/
 .vercel/
 cdn.pika.art/v2/files/
 cdn.pika.art/v2/creation/uploads/
+
+public/
