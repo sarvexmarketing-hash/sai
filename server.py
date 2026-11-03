@@ -303,6 +303,53 @@ class PikaReplicationHandler(BaseHTTPRequestHandler):
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
+          /* MADE WITH SAI TECHNOLOGIES SHOWCASE CARDS VISIBILITY FIX */
+          .group\/tile, li.group\/tile, [class*="group/tile"] {
+            background-color: #1a1918 !important;
+            border: 1px solid rgba(255, 255, 255, 0.14) !important;
+            box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35) !important;
+          }
+          .group\/tile:hover, li.group\/tile:hover, [class*="group/tile"]:hover {
+            border-color: rgba(168, 85, 247, 0.5) !important;
+            box-shadow: 0 18px 36px -4px rgba(0, 0, 0, 0.45) !important;
+            transform: translateY(-4px) !important;
+          }
+          .group\/tile h3, [class*="group/tile"] h3 {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+          .group\/tile p, [class*="group/tile"] p {
+            color: rgba(255, 255, 255, 0.82) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+          .group\/tile span, [class*="group/tile"] span {
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+          .group\/tile .text-white\/50, [class*="group/tile"] .text-white\/50 {
+            color: rgba(255, 255, 255, 0.6) !important;
+          }
+          .group\/tile .text-white\/40, [class*="group/tile"] .text-white\/40 {
+            color: rgba(255, 255, 255, 0.5) !important;
+          }
+          .group\/tile .text-white, [class*="group/tile"] .text-white {
+            color: #ffffff !important;
+          }
+          .group\/tile .bg-white\/10, [class*="group/tile"] .bg-white\/10 {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+          }
+          .group\/tile .bg-white\/5, [class*="group/tile"] .bg-white\/5 {
+            background-color: rgba(255, 255, 255, 0.07) !important;
+            color: rgba(255, 255, 255, 0.75) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          }
+          .group\/tile .border-white\/10, [class*="group/tile"] .border-white\/10 {
+            border-color: rgba(255, 255, 255, 0.14) !important;
+          }
         </style>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
