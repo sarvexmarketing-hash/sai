@@ -351,11 +351,12 @@ aside[aria-labelledby="_R_16ltqbudb_"],
     display: none !important;
 }
 </style><style id="mobile-viewport-fixes">
-/* Global Mobile Viewport & Responsive Fixes */
+/* Global Mobile Viewport & Responsive Fixes - Using clip to preserve position:sticky */
 html, body {
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     max-width: 100vw !important;
     width: 100% !important;
+    position: relative;
 }
 
 @media (max-width: 767px) {
@@ -399,20 +400,31 @@ html, body {
         height: 44px !important;
     }
 
-    /* Mobile Stacking Cards */
-    ul[data-mobile-story="true"] {
-        gap: 0 !important;
+    /* Mobile Stacking Cards (Pika Replica) */
+    #mobile-story-indicator {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 14px !important;
+        z-index: 35 !important;
     }
-    ul[data-mobile-story="true"] li {
-        margin-bottom: 26vh !important;
+    ul[data-mobile-story="true"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding-bottom: 50px !important;
+    }
+    ul[data-mobile-story="true"] > li {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 76px !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
         will-change: transform;
     }
-    ul[data-mobile-story="true"] li:last-child {
-        margin-bottom: 4vh !important;
-    }
-    ul[data-mobile-story="true"] article {
+    ul[data-mobile-story="true"] > li article {
         box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         will-change: transform, filter, box-shadow;
+        transform-origin: center top !important;
     }
 
     /* Section 1 & 2 Spacing on Mobile */
@@ -1065,7 +1077,7 @@ html, body {
                             </div>
                             <div class="@container col-span-16 mt-14 [overflow-anchor:none] md:mt-[clamp(40px,6.25vw,120px)] lg:col-span-14 lg:col-start-2 2xl:col-span-12 2xl:col-start-3 md:[--preview-h:calc(((100cqw_-_240px)*7/16_+_96px)*3/4)] lg:[--preview-h:calc((100cqw_-_16px)/2*3/4)]">
                                 <div class="md:hidden">
-                                    <div class="sticky top-[12px] z-30 mb-6 flex flex-col items-center justify-center text-center px-4 py-2.5 rounded-xl backdrop-blur-md bg-[#FAF9F6]/85 border border-black/5 shadow-xs transition-all duration-300">
+                                    <div id="mobile-story-indicator" class="sticky top-[12px] z-30 mb-6 flex flex-col items-center justify-center text-center px-4 py-2.5 rounded-xl backdrop-blur-md bg-[#FAF9F6]/85 border border-black/5 shadow-xs transition-all duration-300">
     <span class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#7c3aed] uppercase mb-0.5">CURRENT ENGINE</span>
     <h3 id="mobile-story-title" class="text-sm sm:text-base font-bold font-display uppercase tracking-wide text-primary-900 transition-opacity duration-200">AN ENGINE FOR RESPONSIVE WEBSITES</h3>
 </div>
@@ -3191,6 +3203,129 @@ html, body {
 })();
 </script>
 
+<script id="pika-mobile-card-stacking">
+(function initMobileStacking() {
+    function setup() {
+        var ul = document.querySelector('ul[data-mobile-story="true"]');
+        if (!ul) return;
+        var cards = Array.from(ul.querySelectorAll(':scope > li'));
+        if (!cards.length) return;
+
+        var titles = [
+            "AN ENGINE FOR RESPONSIVE WEBSITES",
+            "AN ENGINE FOR FULL-STACK APPLICATIONS",
+            "AN ENGINE FOR ENTERPRISE CRM",
+            "AN ENGINE FOR ERP SYSTEMS",
+            "AN ENGINE FOR NATIVE MOBILE APPS",
+            "AN ENGINE FOR AI CODE ENGINEERING",
+            "AN ENGINE FOR DATABASE ARCHITECTURE",
+            "AN ENGINE FOR CLOUD DEPLOYMENT"
+        ];
+        var titleEl = document.getElementById('mobile-story-title');
+        var currentTitleIdx = -1;
+        var ticking = false;
+
+        function onScroll() {
+            if (window.innerWidth >= 768) {
+                cards.forEach(function(card) {
+                    var article = card.querySelector('article');
+                    if (article) {
+                        article.style.transform = '';
+                        article.style.filter = '';
+                        article.style.boxShadow = '';
+                    }
+                });
+                return;
+            }
+
+            var cardTop = 76;
+            var rects = cards.map(function(c) {
+                return c.getBoundingClientRect();
+            });
+
+            // Active card determination
+            var activeIdx = 0;
+            for (var k = 0; k < rects.length; k++) {
+                if (rects[k].top <= cardTop + 24) {
+                    activeIdx = k;
+                }
+            }
+
+            if (titleEl && activeIdx !== currentTitleIdx && titles[activeIdx]) {
+                currentTitleIdx = activeIdx;
+                titleEl.style.opacity = '0';
+                setTimeout(function() {
+                    titleEl.textContent = titles[currentTitleIdx];
+                    titleEl.style.opacity = '1';
+                }, 100);
+            }
+
+            // Depth calculation from bottom to top
+            var depth = 0;
+            var m = new Array(cards.length).fill(0);
+            for (var t = cards.length - 1; t >= 0; t--) {
+                m[t] = depth;
+                var rect = rects[t];
+                var h = rect.height || 420;
+                if (rect.top <= cardTop + h) {
+                    var progress = Math.max(0, Math.min(1, 1 - (rect.top - cardTop) / h));
+                    depth += progress;
+                }
+            }
+
+            cards.forEach(function(card, idx) {
+                var article = card.querySelector('article');
+                if (!article) return;
+                var c = Math.min(m[idx], 3);
+
+                if (c > 0.01) {
+                    var scale = 1 - (0.032 * c);
+                    var translateY = -8 * c;
+                    var brightness = 1 - (0.09 * c);
+                    article.style.transform = 'translateY(' + translateY + 'px) scale(' + scale + ')';
+                    article.style.filter = 'brightness(' + brightness + ')';
+                    article.style.opacity = m[idx] > 3.5 ? Math.max(0, 4.5 - m[idx]) : '1';
+                } else {
+                    article.style.transform = '';
+                    article.style.filter = '';
+                    article.style.opacity = '1';
+                }
+
+                // Drop shadow on incoming card sliding over the underlying card
+                var nextCard = cards[idx + 1];
+                if (nextCard) {
+                    var nextRect = rects[idx + 1];
+                    var nextArticle = nextCard.querySelector('article');
+                    if (nextArticle && nextRect.top < window.innerHeight && nextRect.top > cardTop) {
+                        var enterProgress = Math.max(0, Math.min(1, (window.innerHeight - nextRect.top) / (window.innerHeight - cardTop)));
+                        nextArticle.style.boxShadow = '0 -' + (enterProgress * 16) + 'px ' + (enterProgress * 32) + 'px rgba(0,0,0,' + (enterProgress * 0.24) + ')';
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    onScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', onScroll, { passive: true });
+        // Initial run
+        onScroll();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+    } else {
+        setup();
+    }
+})();
+</script>
 </body>
 
 
