@@ -6,5 +6,8 @@
     "build": "node build.js",
     "start": "python3 server.py 3000",
     "dev": "python3 server.py 3000"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
