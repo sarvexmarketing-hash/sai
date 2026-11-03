@@ -8,6 +8,6 @@
     "dev": "python3 server.py 3000"
   },
   "engines": {
-    "node": "20.x"
+    "node": "26.x"
   }
 }
