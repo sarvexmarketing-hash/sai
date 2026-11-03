@@ -707,11 +707,11 @@ aside[aria-labelledby="_R_16ltqbudb_"],
                             }]
                         }
                     </script>
-                    <div id="hero-intro" aria-hidden="true" class="fixed inset-0 z-60 hidden">
-                        <div style="animation-delay:1100ms" class="absolute inset-0 origin-top animate-intro-curtain bg-invert-700"></div>
-                        <div style="animation-delay:1350ms" class="absolute inset-0 flex animate-intro-out items-center justify-center text-black">
+                    <div id="hero-intro" aria-hidden="true" class="fixed inset-0 z-60 hidden pointer-events-none">
+                        <div style="animation-delay:1100ms" class="absolute inset-0 origin-top animate-intro-curtain bg-invert-700 pointer-events-none"></div>
+                        <div style="animation-delay:1350ms" class="absolute inset-0 flex animate-intro-out items-center justify-center text-black pointer-events-none">
                             <div class="relative flex flex-col items-center justify-center text-center px-4">
-                                <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[500px] sm:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(192,132,252,0.5)_0%,rgba(168,85,247,0.3)_35%,rgba(244,241,234,0)_70%)] blur-2xl -z-10" aria-hidden="true"></div>
+                                <div style="width:500px; height:500px; border-radius:9999px; background:radial-gradient(circle,rgba(192,132,252,0.55) 0%,rgba(168,85,247,0.3) 38%,rgba(244,241,234,0) 72%); filter:blur(40px);" class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10" aria-hidden="true"></div>
                                 <span class="flex animate-blur-in font-mono text-xs sm:text-sm tracking-[0.35em] uppercase text-primary-800 font-semibold mb-3">INTRODUCING</span>
                                 <span class="flex animate-blur-in font-display font-bold uppercase tracking-[0.02em] text-primary-900 text-[clamp(32px,5vw,84px)] leading-none">SAI TECHNOLOGIES</span>
                             </div>
@@ -728,7 +728,11 @@ aside[aria-labelledby="_R_16ltqbudb_"],
                             var s = document.createElement("style");
                             s.id = "hero-intro-play";
                             s.textContent = ":root{--hero-intro:1800ms;--hero-intro-nav:2200ms}#hero-intro{display:block}";
-                            document.head.appendChild(s)
+                            document.head.appendChild(s);
+                            setTimeout(function() {
+                                var hi = document.getElementById("hero-intro");
+                                if (hi) hi.style.display = "none";
+                            }, 2500);
                         })()
                     </script>
                     <div class="sticky mt-0 bg-transparent p-0" style="margin-top:0 !important; padding:0 !important; background:transparent !important;">
@@ -763,15 +767,221 @@ aside[aria-labelledby="_R_16ltqbudb_"],
                 </div>
                 <div aria-hidden="true"></div>
                 <main data-nav-cover="true" class="relative bg-invert-700 [overflow-anchor:none] sm:rounded-t-sm">
-                    <section id="apps" aria-labelledby="_R_oltqbudb_" class="px-6 pt-22 pb-20 max-md:scroll-mt-6 md:pt-[clamp(96px,calc(26.6667vw_-_256px),256px)] md:pb-[clamp(80px,7.5vw,144px)]">
+                    <!-- ============================================================ -->
+                    <!-- SECTION 1: INTRODUCING SAI TECHNOLOGIES                     -->
+                    <!-- ============================================================ -->
+                    <section id="introducing-sai" class="relative overflow-hidden px-6 pt-24 pb-16 text-center" style="background-color:#FAF9F6; min-height:68vh; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative;">
+                        <!-- Signature Purple Ambient Radial Glow -->
+                        <div style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:clamp(340px, 48vw, 600px); height:clamp(340px, 48vw, 600px); border-radius:9999px; background:radial-gradient(circle, rgba(192,132,252,0.48) 0%, rgba(168,85,247,0.28) 36%, rgba(216,180,254,0.12) 56%, transparent 74%); filter:blur(48px); pointer-events:none; z-index:1;" aria-hidden="true"></div>
+
+                        <div style="position:relative; z-index:2; max-width:960px; margin:0 auto;" class="flex flex-col items-center">
+                            <span style="font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size:clamp(13px, 1.2vw, 15px); letter-spacing:0.38em; text-transform:uppercase; color:#52525b; font-weight:700; margin-bottom:16px; display:inline-block;">
+                                INTRODUCING
+                            </span>
+                            <h2 style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.75rem, 7vw, 6.25rem); font-weight:900; text-transform:uppercase; color:#111111; line-height:0.95; letter-spacing:-0.02em; margin:0 0 20px 0;">
+                                SAI TECHNOLOGIES
+                            </h2>
+                            <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:clamp(1.1rem, 1.6vw, 1.35rem); color:#52525b; max-width:740px; margin:0 auto 28px auto; line-height:1.55; font-weight:400;">
+                                The Autonomous Full-Stack AI Software Platform. We turn specifications and workflows into production-ready websites, apps, and enterprise systems at frontier speed.
+                            </p>
+                            
+                            <!-- CTAs -->
+                            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:8px;">
+                                <a href="/workspace" style="display:inline-flex; align-items:center; justify-content:center; height:48px; padding:0 28px; border-radius:9999px; background:#111111; color:#ffffff; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; text-decoration:none; transition:all 0.2s ease; box-shadow:0 4px 14px rgba(0,0,0,0.12);" onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 14px rgba(0,0,0,0.12)'">
+                                    Launch Workspace
+                                </a>
+                                <a href="#about-company" style="display:inline-flex; align-items:center; justify-content:center; height:48px; padding:0 28px; border-radius:9999px; background:rgba(0,0,0,0.06); color:#111111; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; text-decoration:none; border:1px solid rgba(0,0,0,0.12); transition:all 0.2s ease;" onmouseover="this.style.background='rgba(0,0,0,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.06)'">
+                                    About Company &darr;
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ============================================================ -->
+                    <!-- SECTION 2: SCROLLING ABOUT THE COMPANY                       -->
+                    <!-- ============================================================ -->
+                    <section id="about-company" class="relative overflow-hidden px-6 py-20" style="background-color:#FAF9F6; border-top:1px solid rgba(0,0,0,0.06); position:relative;">
+                        <style>
+                            @keyframes saiMarquee {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            .sai-marquee-track {
+                                display: flex;
+                                gap: 48px;
+                                white-space: nowrap;
+                                width: max-content;
+                                animation: saiMarquee 32s linear infinite;
+                            }
+                            .sai-marquee-track:hover {
+                                animation-play-state: paused;
+                            }
+                            .sai-company-card:hover {
+                                transform: translateY(-4px) !important;
+                                box-shadow: 0 16px 36px -4px rgba(0,0,0,0.1) !important;
+                                border-color: rgba(124, 58, 237, 0.3) !important;
+                            }
+                        </style>
+
+                        <!-- Kinetic Ticker Marquee -->
+                        <div style="width:100%; overflow:hidden; margin-bottom:56px; border-top:1px solid rgba(0,0,0,0.07); border-bottom:1px solid rgba(0,0,0,0.07); padding:16px 0; background:rgba(255,255,255,0.45); border-radius:12px;">
+                            <div class="sai-marquee-track">
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    100% Autonomous Code Synthesis
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Multi-Agent Swarm Intelligence
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Full-Stack Next.js &bull; React &bull; Node &bull; Python
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Zero Vendor Lock-In &bull; Clean Code Export
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Enterprise CRM &bull; ERP &bull; Microservices
+                                </span>
+                                <!-- Duplicate Track for Seamless Infinite Loop -->
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    100% Autonomous Code Synthesis
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Multi-Agent Swarm Intelligence
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Full-Stack Next.js &bull; React &bull; Node &bull; Python
+                                </span>
+                                <span style="font-family:ui-monospace, monospace; font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:10px;">
+                                    <span style="display:inline-block; width:8px; height:8px; border-radius:9999px; background:#a855f7;"></span>
+                                    Zero Vendor Lock-In &bull; Clean Code Export
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Story & Mission Block -->
+                        <div style="max-width:1200px; margin:0 auto; margin-bottom:56px;">
+                            <div style="display:flex; flex-direction:column; gap:14px;">
+                                <span style="font-family:ui-monospace, monospace; font-size:13px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#7c3aed;">
+                                    ABOUT THE COMPANY
+                                </span>
+                                <h3 style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2rem, 4.2vw, 3.5rem); font-weight:800; color:#111111; line-height:1.05; letter-spacing:-0.02em; margin:0;">
+                                    Engineering the Future of Software Creation.
+                                </h3>
+                                <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:clamp(1.05rem, 1.4vw, 1.25rem); color:#52525b; max-width:840px; line-height:1.6; margin:8px 0 0 0;">
+                                    Sai Technologies was founded to bridge the divide between human vision and full-stack software reality. We believe that writing repetitive boilerplate, manual configuration, and fragmented debugging should be fully autonomous. We build software that builds software.
+                                </p>
+                            </div>
+
+                            <!-- Company Metric Counters -->
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:24px; margin-top:40px; padding:32px; background:#ece8df; border-radius:20px; border:1px solid #ded8cb;">
+                                <div>
+                                    <div style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.5rem, 3.5vw, 3.25rem); font-weight:800; color:#111111; line-height:1;">10x</div>
+                                    <div style="font-family:Telka, var(--font-sans, sans-serif); font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.08em; margin-top:8px;">Development Velocity</div>
+                                </div>
+                                <div>
+                                    <div style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.5rem, 3.5vw, 3.25rem); font-weight:800; color:#7c3aed; line-height:1;">100%</div>
+                                    <div style="font-family:Telka, var(--font-sans, sans-serif); font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.08em; margin-top:8px;">Full-Stack Synthesis</div>
+                                </div>
+                                <div>
+                                    <div style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.5rem, 3.5vw, 3.25rem); font-weight:800; color:#111111; line-height:1;">0</div>
+                                    <div style="font-family:Telka, var(--font-sans, sans-serif); font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.08em; margin-top:8px;">Proprietary Lock-In</div>
+                                </div>
+                                <div>
+                                    <div style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.5rem, 3.5vw, 3.25rem); font-weight:800; color:#111111; line-height:1;">&infin;</div>
+                                    <div style="font-family:Telka, var(--font-sans, sans-serif); font-size:14px; font-weight:600; color:#52525b; text-transform:uppercase; letter-spacing:0.08em; margin-top:8px;">Extensibility & Scale</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Interactive Scrolling Company Pillar Cards -->
+                        <div style="max-width:1200px; margin:0 auto;">
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+                                
+                                <div class="sai-company-card" style="background:#ffffff; border-radius:20px; padding:32px 28px; border:1px solid #e5e0d4; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition:all 0.3s ease;">
+                                    <div style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(168,85,247,0.12); color:#7c3aed; font-size:20px; margin-bottom:20px;">
+                                        ⚡
+                                    </div>
+                                    <h4 style="font-family:Telka, var(--font-display, sans-serif); font-size:20px; font-weight:700; color:#111111; margin:0 0 10px 0;">
+                                        Autonomous Agent Swarm
+                                    </h4>
+                                    <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:15px; color:#64748b; line-height:1.55; margin:0 0 18px 0;">
+                                        Specialized AI agents work in parallel — an Architect drafts the structure, Frontend and Backend engineers synthesize the code, and a QA agent tests every route before preview.
+                                    </p>
+                                    <div style="font-family:ui-monospace, monospace; font-size:12px; font-weight:600; color:#7c3aed; text-transform:uppercase; letter-spacing:0.08em;">
+                                        Multi-Agent Swarm &rarr;
+                                    </div>
+                                </div>
+
+                                <div class="sai-company-card" style="background:#ffffff; border-radius:20px; padding:32px 28px; border:1px solid #e5e0d4; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition:all 0.3s ease;">
+                                    <div style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(59,130,246,0.12); color:#2563eb; font-size:20px; margin-bottom:20px;">
+                                        🏗️
+                                    </div>
+                                    <h4 style="font-family:Telka, var(--font-display, sans-serif); font-size:20px; font-weight:700; color:#111111; margin:0 0 10px 0;">
+                                        Complete Production Stacks
+                                    </h4>
+                                    <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:15px; color:#64748b; line-height:1.55; margin:0 0 18px 0;">
+                                        No pseudo-code or partial snippets. Sai Technologies generates complete production repositories equipped with React 19, Next.js, Node.js, PostgreSQL, Tailwind, and REST/GraphQL APIs.
+                                    </p>
+                                    <div style="font-family:ui-monospace, monospace; font-size:12px; font-weight:600; color:#2563eb; text-transform:uppercase; letter-spacing:0.08em;">
+                                        Production Reliability &rarr;
+                                    </div>
+                                </div>
+
+                                <div class="sai-company-card" style="background:#ffffff; border-radius:20px; padding:32px 28px; border:1px solid #e5e0d4; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition:all 0.3s ease;">
+                                    <div style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(16,185,129,0.12); color:#059669; font-size:20px; margin-bottom:20px;">
+                                        🔓
+                                    </div>
+                                    <h4 style="font-family:Telka, var(--font-display, sans-serif); font-size:20px; font-weight:700; color:#111111; margin:0 0 10px 0;">
+                                        100% Code Ownership
+                                    </h4>
+                                    <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:15px; color:#64748b; line-height:1.55; margin:0 0 18px 0;">
+                                        Download clean, standard, readable code that you can host anywhere: AWS, Vercel, GCP, or on-premise servers. You are never locked into any proprietary platform or runtime.
+                                    </p>
+                                    <div style="font-family:ui-monospace, monospace; font-size:12px; font-weight:600; color:#059669; text-transform:uppercase; letter-spacing:0.08em;">
+                                        Open Ecosystem &rarr;
+                                    </div>
+                                </div>
+
+                                <div class="sai-company-card" style="background:#ffffff; border-radius:20px; padding:32px 28px; border:1px solid #e5e0d4; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition:all 0.3s ease;">
+                                    <div style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(245,158,11,0.12); color:#d97706; font-size:20px; margin-bottom:20px;">
+                                        🛡️
+                                    </div>
+                                    <h4 style="font-family:Telka, var(--font-display, sans-serif); font-size:20px; font-weight:700; color:#111111; margin:0 0 10px 0;">
+                                        Enterprise Scale & Security
+                                    </h4>
+                                    <p style="font-family:Telka, var(--font-sans, sans-serif); font-size:15px; color:#64748b; line-height:1.55; margin:0 0 18px 0;">
+                                        Engineered for mission-critical reliability. Built-in role-based security, multi-tenant isolation, automated vulnerability scans, and scalable cloud-native architectures.
+                                    </p>
+                                    <div style="font-family:ui-monospace, monospace; font-size:12px; font-weight:600; color:#d97706; text-transform:uppercase; letter-spacing:0.08em;">
+                                        Enterprise Grade &rarr;
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ============================================================ -->
+                    <!-- SECTION 3: AUTONOMOUS SOFTWARE BUILDER SUITE                -->
+                    <!-- ============================================================ -->
+                    <section id="apps" aria-labelledby="_R_oltqbudb_" class="px-6 pt-16 pb-20 max-md:scroll-mt-6 md:pb-[clamp(80px,7.5vw,144px)]">
                         <div class="mx-auto grid w-full max-w-500 grid-cols-16 gap-x-4">
                             <div class="col-span-16 flex flex-col items-center gap-4 text-center md:gap-6 lg:col-span-12 lg:col-start-3 2xl:col-span-8 2xl:col-start-5 relative">
-                                <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[520px] sm:h-[520px] rounded-full bg-[radial-gradient(circle,rgba(192,132,252,0.45)_0%,rgba(168,85,247,0.25)_38%,rgba(244,241,234,0)_72%)] blur-2xl -z-10" aria-hidden="true"></div>
-                                <span class="font-mono text-xs sm:text-sm tracking-[0.35em] uppercase text-primary-700 font-semibold">INTRODUCING</span>
-                                <h2 id="_R_oltqbudb_" class="w-full font-display font-medium text-[min(clamp(2rem,6.5vw,56px),calc((100vw_-_48px)/var(--headline-em)))] text-primary-900 uppercase leading-[1.0] tracking-[0.01em] md:text-[clamp(46px,4.5vw,76px)]">
-                                    SAI TECHNOLOGIES
+                                <span style="font-family:ui-monospace, monospace; font-size:13px; font-weight:700; letter-spacing:0.35em; text-transform:uppercase; color:#7c3aed;">
+                                    AUTONOMOUS SUITE
+                                </span>
+                                <h2 id="_R_oltqbudb_" style="font-family:Telka, var(--font-display, sans-serif); font-size:clamp(2.25rem, 5vw, 3.75rem); font-weight:800; text-transform:uppercase; color:#111111; line-height:1.05; letter-spacing:-0.02em;" class="w-full">
+                                    Intelligent Software Builders
                                 </h2>
-                                <p class="mx-auto max-w-150 text-pretty font-normal text-copy-16 text-primary-600 md:text-copy-20" style="opacity:1;transform:none">Autonomous full-stack AI software development platform. Built around self-contained intelligent tools that turn your specifications into production applications.</p>
+                                <p class="mx-auto max-w-150 text-pretty font-normal text-copy-16 text-primary-600 md:text-copy-20" style="opacity:1;transform:none; font-family:Telka, var(--font-sans, sans-serif);">Purpose-built autonomous engines designed to generate, test, and deploy specialized applications across every modern business workflow.</p>
                             </div>
                             <div class="@container col-span-16 mt-14 [overflow-anchor:none] md:mt-[clamp(40px,6.25vw,120px)] lg:col-span-14 lg:col-start-2 2xl:col-span-12 2xl:col-start-3 md:[--preview-h:calc(((100cqw_-_240px)*7/16_+_96px)*3/4)] lg:[--preview-h:calc((100cqw_-_16px)/2*3/4)]">
                                 <div class="md:hidden">

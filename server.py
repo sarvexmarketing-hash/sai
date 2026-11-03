@@ -298,6 +298,11 @@ class PikaReplicationHandler(BaseHTTPRequestHandler):
         <style>
           video { opacity: 1 !important; }
           #workflow, #community { display: block !important; opacity: 1 !important; visibility: visible !important; }
+          #introducing-sai, #about-company { display: block !important; visibility: visible !important; opacity: 1 !important; }
+          @keyframes saiMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
         </style>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
