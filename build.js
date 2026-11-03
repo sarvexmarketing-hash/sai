@@ -45,7 +45,7 @@ for (const file of filesToCopy) {
 }
 
 // 3. Copy asset directories to public/
-const dirsToCopy = ['_next', 'marketing', 'v2', 'assets', 'showcase', 'pika-fonts', 'unleash'];
+const dirsToCopy = ['next_assets', 'marketing', 'v2', 'assets', 'showcase', 'pika-fonts', 'unleash'];
 for (const dir of dirsToCopy) {
   const src = path.join(rootDir, dir);
   const dest = path.join(publicDir, dir);

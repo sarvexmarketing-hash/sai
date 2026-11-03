@@ -274,8 +274,8 @@
         });
         let {
             pathname: t
-        } = new URL(e.src), r = t.indexOf("/_next/");
-        if (-1 === r) throw Object.defineProperty(new n.InvariantError(`Expected document.currentScript src to contain '/_next/'. Received ${e.src} instead.`), "__NEXT_ERROR_CODE", {
+        } = new URL(e.src), r = t.indexOf("/next_assets/");
+        if (-1 === r) throw Object.defineProperty(new n.InvariantError(`Expected document.currentScript src to contain '/next_assets/'. Received ${e.src} instead.`), "__NEXT_ERROR_CODE", {
             value: "E784",
             enumerable: !1,
             configurable: !0

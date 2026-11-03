@@ -264,7 +264,7 @@
             deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
             imageSizes: [32, 48, 64, 96, 128, 256, 384],
             qualities: [75],
-            path: "/_next/image",
+            path: "/next_assets/image",
             loader: "default",
             dangerouslyAllowSVG: !1,
             unoptimized: !1
@@ -637,7 +637,7 @@ Read more: https://nextjs.org/docs/messages/next-image-missing-loader`), "__NEXT
                 if (r) {
                     if (t.startsWith("/") && !t.startsWith("//")) {
                         let e = (0, i.getDeploymentId)();
-                        if (t.includes("/_next/static/immutable") && !(0, i.getAssetToken)()) e = void 0;
+                        if (t.includes("/next_assets/static/immutable") && !(0, i.getAssetToken)()) e = void 0;
                         else if (e) {
                             let r = t.indexOf("?");
                             if (-1 !== r) {
@@ -881,7 +881,7 @@ Read more: https://nextjs.org/docs/messages/next-image-missing-loader`), "__NEXT
         s = {
             deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
             imageSizes: [32, 48, 64, 96, 128, 256, 384],
-            path: "/_next/image",
+            path: "/next_assets/image",
             loader: "default",
             loaderFile: "",
             domains: [],
@@ -932,7 +932,7 @@ Read more: https://nextjs.org/docs/messages/next-image-missing-loader`), "__NEXT
                 deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
                 imageSizes: [32, 48, 64, 96, 128, 256, 384],
                 qualities: [75],
-                path: "/_next/image",
+                path: "/next_assets/image",
                 loader: "default",
                 dangerouslyAllowSVG: !1,
                 unoptimized: !1
@@ -967,7 +967,7 @@ Read more: https://nextjs.org/docs/messages/next-image-missing-loader`), "__NEXT
     }) {
         let l = (0, n.getDeploymentId)();
         if (t.startsWith("/") && !t.startsWith("//"))
-            if (t.includes("/_next/static/immutable") && !(0, n.getAssetToken)()) l = void 0;
+            if (t.includes("/next_assets/static/immutable") && !(0, n.getAssetToken)()) l = void 0;
             else {
                 let e = t.indexOf("?");
                 if (-1 !== e) {

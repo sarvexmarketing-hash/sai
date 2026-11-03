@@ -884,7 +884,7 @@
         let a = (0, l.getAssetTokenQuery)();
         return (0, n.jsx)(n.Fragment, {
             children: r.map(e => {
-                let r = `${t.assetPrefix}/_next/${(0,s.encodeURIPath)(e)}${a}`;
+                let r = `${t.assetPrefix}/next_assets/${(0,s.encodeURIPath)(e)}${a}`;
                 return e.endsWith(".css") ? (0, n.jsx)("link", {
                     precedence: "dynamic",
                     href: r,

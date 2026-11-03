@@ -270,7 +270,7 @@
         }), n && -1 === n.status && (n.status = 0)
     };
     let v = i.prototype,
-        U = "string" == typeof TURBOPACK_CHUNK_BASE_PATH ? TURBOPACK_CHUNK_BASE_PATH : "/_next/",
+        U = "string" == typeof TURBOPACK_CHUNK_BASE_PATH ? TURBOPACK_CHUNK_BASE_PATH : "/next_assets/",
         P = new Map;
     l.M = P;
     let $ = new Map,
