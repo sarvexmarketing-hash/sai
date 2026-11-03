@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#080a12;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="40" y="35" width="1120" height="830" rx="16" fill="#0d111d" stroke="#1b2138" stroke-width="1.5"/>
+  <!-- Top bar -->
+  <rect x="40" y="35" width="1120" height="52" rx="16" fill="#131728"/>
+  <circle cx="74" cy="61" r="6" fill="#ef4444"/>
+  <circle cx="96" cy="61" r="6" fill="#eab308"/>
+  <circle cx="118" cy="61" r="6" fill="#22c55e"/>
+  <text x="150" y="66" fill="#cbd5e1" font-size="13" font-family="monospace">sai-ide — server/routes/auth_middleware.go (Workspace)</text>
+
+  <!-- Left: File Explorer Sidebar -->
+  <g transform="translate(40, 87)">
+    <rect x="0" y="0" width="210" height="778" fill="#0a0d17" stroke="#171d30"/>
+    <text x="25" y="35" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1">EXPLORER</text>
+    <text x="25" y="70" fill="#cbd5e1" font-size="13" font-family="monospace">📁 cmd/server</text>
+    <text x="40" y="95" fill="#94a3b8" font-size="12" font-family="monospace">📄 main.go</text>
+    <text x="25" y="125" fill="#cbd5e1" font-size="13" font-family="monospace">📁 internal/auth</text>
+    <rect x="25" y="140" width="170" height="28" rx="4" fill="#182038"/>
+    <text x="40" y="158" fill="#38bdf8" font-size="12" font-family="monospace">📄 auth_middleware.go</text>
+    <text x="40" y="185" fill="#94a3b8" font-size="12" font-family="monospace">📄 jwt_service.go</text>
+    <text x="25" y="215" fill="#cbd5e1" font-size="13" font-family="monospace">📁 migrations</text>
+    <text x="40" y="240" fill="#94a3b8" font-size="12" font-family="monospace">📄 001_init.sql</text>
+    <text x="25" y="270" fill="#cbd5e1" font-size="13" font-family="monospace">⚙️ Dockerfile</text>
+  </g>
+
+  <!-- Center: Code Editor Area -->
+  <g transform="translate(255, 87)">
+    <rect x="0" y="0" width="550" height="520" fill="#0d111d"/>
+    <!-- Line numbers and Code with Diff Highlights -->
+    <text x="15" y="45" fill="#475569" font-size="13" font-family="monospace">1</text>
+    <text x="40" y="45" fill="#f43f5e" font-size="13" font-family="monospace">package</text>
+    <text x="100" y="45" fill="#e2e8f0" font-size="13" font-family="monospace">middleware</text>
+
+    <text x="15" y="75" fill="#475569" font-size="13" font-family="monospace">2</text>
+    <text x="40" y="75" fill="#f43f5e" font-size="13" font-family="monospace">import</text>
+    <text x="95" y="75" fill="#10b981" font-size="13" font-family="monospace">"github.com/golang-jwt/jwt/v5"</text>
+
+    <text x="15" y="105" fill="#475569" font-size="13" font-family="monospace">3</text>
+    <text x="40" y="105" fill="#3b82f6" font-size="13" font-family="monospace">func</text>
+    <text x="80" y="105" fill="#eab308" font-size="13" font-family="monospace">RequireAuth(next http.Handler) http.Handler {</text>
+
+    <text x="15" y="135" fill="#475569" font-size="13" font-family="monospace">4</text>
+    <text x="60" y="135" fill="#3b82f6" font-size="13" font-family="monospace">return</text>
+    <text x="115" y="135" fill="#eab308" font-size="13" font-family="monospace">http.HandlerFunc(func(w, r *http.Request) {</text>
+
+    <!-- AI Diff inserted lines (Green background) -->
+    <rect x="0" y="150" width="550" height="95" fill="#10b981" fill-opacity="0.1"/>
+    <text x="15" y="170" fill="#34d399" font-size="13" font-family="monospace">+ 5</text>
+    <text x="60" y="170" fill="#e2e8f0" font-size="13" font-family="monospace">tokenString := r.Header.Get("Authorization")</text>
+    
+    <text x="15" y="200" fill="#34d399" font-size="13" font-family="monospace">+ 6</text>
+    <text x="60" y="200" fill="#f43f5e" font-size="13" font-family="monospace">if</text>
+    <text x="80" y="200" fill="#e2e8f0" font-size="13" font-family="monospace"> tokenString == "" { http.Error(w, "Unauthorized", 401); return }</text>
+
+    <text x="15" y="230" fill="#34d399" font-size="13" font-family="monospace">+ 7</text>
+    <text x="60" y="230" fill="#e2e8f0" font-size="13" font-family="monospace">claims, err := ValidateToken(tokenString)</text>
+
+    <text x="15" y="265" fill="#475569" font-size="13" font-family="monospace">8</text>
+    <text x="60" y="265" fill="#e2e8f0" font-size="13" font-family="monospace">ctx := context.WithValue(r.Context(), "user", claims)</text>
+
+    <text x="15" y="295" fill="#475569" font-size="13" font-family="monospace">9</text>
+    <text x="60" y="295" fill="#e2e8f0" font-size="13" font-family="monospace">next.ServeHTTP(w, r.WithContext(ctx))</text>
+
+    <text x="15" y="325" fill="#475569" font-size="13" font-family="monospace">10</text>
+    <text x="40" y="325" fill="#eab308" font-size="13" font-family="monospace">})</text>
+    
+    <text x="15" y="355" fill="#475569" font-size="13" font-family="monospace">11</text>
+    <text x="40" y="355" fill="#eab308" font-size="13" font-family="monospace">}</text>
+
+    <!-- Terminal Pane below code -->
+    <rect x="0" y="410" width="550" height="365" fill="#090c14" stroke="#191e30"/>
+    <text x="20" y="435" fill="#64748b" font-size="12" font-family="monospace">TERMINAL — sai-agent-daemon</text>
+    <text x="20" y="470" fill="#38bdf8" font-size="12" font-family="monospace">$ go test -v -race ./internal/auth/...</text>
+    <text x="20" y="495" fill="#22c55e" font-size="12" font-family="monospace">=== RUN   TestRequireAuth_ValidToken</text>
+    <text x="20" y="515" fill="#22c55e" font-size="12" font-family="monospace">--- PASS: TestRequireAuth_ValidToken (0.00s)</text>
+    <text x="20" y="535" fill="#22c55e" font-size="12" font-family="monospace">=== RUN   TestRequireAuth_ExpiredToken_Returns401</text>
+    <text x="20" y="555" fill="#22c55e" font-size="12" font-family="monospace">--- PASS: TestRequireAuth_ExpiredToken_Returns401 (0.00s)</text>
+    <text x="20" y="585" fill="#10b981" font-size="13" font-weight="700" font-family="monospace">PASS: 18 passed, 0 failed. Coverage: 98.4% of statements</text>
+  </g>
+
+  <!-- Right: AI Engineer Copilot Chat Pane -->
+  <g transform="translate(810, 87)">
+    <rect x="0" y="0" width="350" height="778" fill="#0f1322" stroke="#1c233a"/>
+    <rect x="0" y="0" width="350" height="45" fill="#14192b"/>
+    <circle cx="25" cy="22" r="10" fill="#6366f1"/>
+    <text x="21" y="26" fill="#ffffff" font-size="11">⚡</text>
+    <text x="45" y="27" fill="#ffffff" font-size="14" font-weight="600">AI Software Engineer</text>
+    
+    <!-- Chat Bubble 1: User -->
+    <rect x="20" y="65" width="310" height="75" rx="10" fill="#1a2035" stroke="#273252"/>
+    <text x="35" y="92" fill="#ffffff" font-size="13">"Implement JWT session validation</text>
+    <text x="35" y="112" fill="#ffffff" font-size="13">with 401 headers and write unit tests."</text>
+
+    <!-- Chat Bubble 2: AI Agent -->
+    <rect x="20" y="155" width="310" height="240" rx="10" fill="#121626" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="35" y="185" fill="#38bdf8" font-size="12" font-weight="600">Sai Agent • Executing Plan</text>
+    <text x="35" y="215" fill="#cbd5e1" font-size="13">1. Analyzed AST &amp; import tree</text>
+    <text x="35" y="240" fill="#cbd5e1" font-size="13">2. Generated AuthMiddleware logic</text>
+    <text x="35" y="265" fill="#cbd5e1" font-size="13">3. Synthesized 2 comprehensive tests</text>
+    <text x="35" y="290" fill="#cbd5e1" font-size="13">4. Executed go test: 100% verified</text>
+
+    <rect x="35" y="325" width="280" height="45" rx="8" fill="#10b981"/>
+    <text x="95" y="353" fill="#ffffff" font-size="13" font-weight="700">✓ Changes Applied to Disk</text>
+
+    <!-- Agent Telemetry -->
+    <rect x="20" y="415" width="310" height="340" rx="10" fill="#121626" stroke="#222a45"/>
+    <text x="35" y="445" fill="#ffffff" font-size="13" font-weight="600">Multi-Agent Orchestration</text>
+    <text x="35" y="480" fill="#22c55e" font-size="12">● Planner Agent: Complete</text>
+    <text x="35" y="515" fill="#22c55e" font-size="12">● Architect Agent: Complete</text>
+    <text x="35" y="550" fill="#22c55e" font-size="12">● Backend Agent: Complete</text>
+    <text x="35" y="585" fill="#22c55e" font-size="12">● Testing Agent: Passed (0 errors)</text>
+    <text x="35" y="620" fill="#38bdf8" font-size="12">● Deploy Agent: Ready for PR</text>
+  </g>
+</svg>

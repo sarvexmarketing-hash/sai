@@ -1,0 +1,19 @@
+import { generateSurveys as generateSharedSurveys } from '@posthog/browser-common/surveys-renderer'
+import { getSurveyRenderContext } from '../browser-surveys'
+import type { PostHog } from '../posthog-core'
+
+export const generateSurveys = (instance: PostHog, enabled?: boolean) => {
+    const context = getSurveyRenderContext(instance)
+    return context ? generateSharedSurveys(context, enabled) : undefined
+}
+
+import { assignableWindow } from '../utils/globals'
+
+assignableWindow.__PosthogExtensions__ = assignableWindow.__PosthogExtensions__ || {}
+assignableWindow.__PosthogExtensions__.generateSurveys = generateSurveys
+
+// this used to be directly on window, but we moved it to __PosthogExtensions__
+// it is still on window for backwards compatibility
+assignableWindow.extendPostHogWithSurveys = generateSurveys
+
+export default generateSurveys

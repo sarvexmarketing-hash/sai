@@ -1,0 +1,47 @@
+html.lenis,
+html.lenis body {
+    height: auto
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+    overflow: clip
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+    overscroll-behavior: contain
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none
+}
+
+.lenis.lenis-autoToggle {
+    transition-behavior: allow-discrete;
+    transition-property: overflow;
+    transition-duration: 1ms
+}
+
+
+/* ANTIGRAVITY PRODUCTION OVERRIDES FOR HEADER, BANNER, AND ZERO WHITE GAP */
+#main-content, .pt-18, [class*="pt-18"], div#main-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+aside[aria-labelledby], .group\/banner, [class*="peer/promo"], [class*="peer-has-[aside]"], aside {
+    display: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+div[class*="pointer-events-none fixed inset-x-0 top-0 z-30 h-20 bg-white"],
+div[class*="h-20 bg-white"] {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+}

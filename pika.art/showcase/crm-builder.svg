@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#0b0f19;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <!-- Window Container -->
+  <rect x="40" y="35" width="1120" height="830" rx="16" fill="#111625" stroke="#1f273d" stroke-width="1.5"/>
+  <!-- Header -->
+  <rect x="40" y="35" width="1120" height="56" rx="16" fill="#161d31"/>
+  <circle cx="74" cy="63" r="6" fill="#ef4444"/>
+  <circle cx="96" cy="63" r="6" fill="#eab308"/>
+  <circle cx="118" cy="63" r="6" fill="#22c55e"/>
+  <text x="150" y="68" fill="#ffffff" font-size="16" font-weight="700">Sai CRM</text>
+  <text x="225" y="68" fill="#64748b" font-size="14">/ Sales Pipeline &amp; Customer Intelligence</text>
+
+  <rect x="820" y="48" width="180" height="30" rx="6" fill="#1c253c" stroke="#2d3a5a"/>
+  <text x="835" y="68" fill="#94a3b8" font-size="12">🔍 Search 1,420 accounts...</text>
+  <rect x="1015" y="48" width="125" height="30" rx="6" fill="#10b981"/>
+  <text x="1030" y="68" fill="#ffffff" font-size="12" font-weight="600">+ Add Deal</text>
+
+  <!-- Metric Summary Cards -->
+  <g transform="translate(70, 110)">
+    <rect x="0" y="0" width="250" height="80" rx="10" fill="#171f33" stroke="#25314f"/>
+    <text x="20" y="32" fill="#94a3b8" font-size="12">Total Pipeline Value</text>
+    <text x="20" y="62" fill="#ffffff" font-size="24" font-weight="700">,840,000</text>
+    <text x="175" y="62" fill="#10b981" font-size="12" font-weight="600">+22%</text>
+
+    <rect x="270" y="0" width="250" height="80" rx="10" fill="#171f33" stroke="#25314f"/>
+    <text x="290" y="32" fill="#94a3b8" font-size="12">Weighted Forecast</text>
+    <text x="290" y="62" fill="#ffffff" font-size="24" font-weight="700">,495,200</text>
+    <text x="445" y="62" fill="#38bdf8" font-size="12" font-weight="600">92% Win</text>
+
+    <rect x="540" y="0" width="250" height="80" rx="10" fill="#171f33" stroke="#25314f"/>
+    <text x="560" y="32" fill="#94a3b8" font-size="12">Active Sales Leads</text>
+    <text x="560" y="62" fill="#ffffff" font-size="24" font-weight="700">384 Contacts</text>
+    <text x="725" y="62" fill="#a855f7" font-size="12" font-weight="600">+14 today</text>
+
+    <rect x="810" y="0" width="250" height="80" rx="10" fill="#171f33" stroke="#25314f"/>
+    <text x="830" y="32" fill="#94a3b8" font-size="12">Average Deal Cycle</text>
+    <text x="830" y="62" fill="#ffffff" font-size="24" font-weight="700">14.2 Days</text>
+    <text x="985" y="62" fill="#10b981" font-size="12" font-weight="600">-4 days</text>
+  </g>
+
+  <!-- Kanban Board: 4 Pipeline Columns -->
+  <!-- Column 1: Qualified Leads -->
+  <g transform="translate(70, 215)">
+    <rect x="0" y="0" width="250" height="620" rx="12" fill="#131a2c" stroke="#202942"/>
+    <rect x="16" y="16" width="12" height="12" rx="6" fill="#38bdf8"/>
+    <text x="36" y="27" fill="#ffffff" font-size="14" font-weight="600">Qualified Leads</text>
+    <rect x="200" y="14" width="32" height="20" rx="10" fill="#1c253d"/>
+    <text x="212" y="28" fill="#94a3b8" font-size="11">14</text>
+
+    <!-- Card 1 -->
+    <rect x="15" y="50" width="220" height="125" rx="8" fill="#1c2438" stroke="#2c3754"/>
+    <text x="30" y="78" fill="#ffffff" font-size="14" font-weight="600">Apex Global Inc.</text>
+    <text x="30" y="100" fill="#10b981" font-size="16" font-weight="700">,000</text>
+    <text x="30" y="125" fill="#94a3b8" font-size="11">Contact: David Kim (CTO)</text>
+    <rect x="30" y="140" width="65" height="20" rx="4" fill="#38bdf8" fill-opacity="0.15"/>
+    <text x="37" y="154" fill="#38bdf8" font-size="10" font-weight="600">SaaS Tier 1</text>
+
+    <!-- Card 2 -->
+    <rect x="15" y="190" width="220" height="125" rx="8" fill="#1c2438" stroke="#2c3754"/>
+    <text x="30" y="218" fill="#ffffff" font-size="14" font-weight="600">Vortex Systems</text>
+    <text x="30" y="240" fill="#10b981" font-size="16" font-weight="700">,500</text>
+    <text x="30" y="265" fill="#94a3b8" font-size="11">Contact: Elena Rostova</text>
+    <rect x="30" y="280" width="75" height="20" rx="4" fill="#a855f7" fill-opacity="0.15"/>
+    <text x="37" y="294" fill="#c084fc" font-size="10" font-weight="600">Enterprise</text>
+  </g>
+
+  <!-- Column 2: Demo / Discovery -->
+  <g transform="translate(340, 215)">
+    <rect x="0" y="0" width="250" height="620" rx="12" fill="#131a2c" stroke="#202942"/>
+    <rect x="16" y="16" width="12" height="12" rx="6" fill="#a855f7"/>
+    <text x="36" y="27" fill="#ffffff" font-size="14" font-weight="600">Discovery Call</text>
+    <rect x="200" y="14" width="32" height="20" rx="10" fill="#1c253d"/>
+    <text x="212" y="28" fill="#94a3b8" font-size="11">8</text>
+
+    <!-- Card 1 -->
+    <rect x="15" y="50" width="220" height="135" rx="8" fill="#1c2438" stroke="#2c3754"/>
+    <text x="30" y="78" fill="#ffffff" font-size="14" font-weight="600">Quantum Robotics</text>
+    <text x="30" y="100" fill="#10b981" font-size="16" font-weight="700">,000</text>
+    <text x="30" y="125" fill="#94a3b8" font-size="11">Scheduled: Today 3:00 PM</text>
+    <rect x="30" y="145" width="80" height="20" rx="4" fill="#eab308" fill-opacity="0.15"/>
+    <text x="37" y="159" fill="#eab308" font-size="10" font-weight="600">Hot Prospect</text>
+
+    <!-- Card 2 -->
+    <rect x="15" y="200" width="220" height="125" rx="8" fill="#1c2438" stroke="#2c3754"/>
+    <text x="30" y="228" fill="#ffffff" font-size="14" font-weight="600">Helios Cloud</text>
+    <text x="30" y="250" fill="#10b981" font-size="16" font-weight="700">,000</text>
+    <text x="30" y="275" fill="#94a3b8" font-size="11">POC Environment Active</text>
+    <rect x="30" y="290" width="65" height="20" rx="4" fill="#38bdf8" fill-opacity="0.15"/>
+    <text x="37" y="304" fill="#38bdf8" font-size="10" font-weight="600">SaaS Tier 1</text>
+  </g>
+
+  <!-- Column 3: Proposal Sent -->
+  <g transform="translate(610, 215)">
+    <rect x="0" y="0" width="250" height="620" rx="12" fill="#131a2c" stroke="#202942"/>
+    <rect x="16" y="16" width="12" height="12" rx="6" fill="#f59e0b"/>
+    <text x="36" y="27" fill="#ffffff" font-size="14" font-weight="600">Proposal Sent</text>
+    <rect x="200" y="14" width="32" height="20" rx="10" fill="#1c253d"/>
+    <text x="212" y="28" fill="#94a3b8" font-size="11">5</text>
+
+    <!-- Card 1 -->
+    <rect x="15" y="50" width="220" height="135" rx="8" fill="#1c2438" stroke="#2c3754"/>
+    <text x="30" y="78" fill="#ffffff" font-size="14" font-weight="600">Starlight Fintech</text>
+    <text x="30" y="100" fill="#10b981" font-size="16" font-weight="700">,000</text>
+    <text x="30" y="125" fill="#94a3b8" font-size="11">Contract under review</text>
+    <rect x="30" y="145" width="95" height="20" rx="4" fill="#10b981" fill-opacity="0.15"/>
+    <text x="37" y="159" fill="#34d399" font-size="10" font-weight="600">95% Probability</text>
+  </g>
+
+  <!-- Column 4: Closed Won -->
+  <g transform="translate(880, 215)">
+    <rect x="0" y="0" width="250" height="620" rx="12" fill="#131a2c" stroke="#202942"/>
+    <rect x="16" y="16" width="12" height="12" rx="6" fill="#10b981"/>
+    <text x="36" y="27" fill="#ffffff" font-size="14" font-weight="600">Closed Won</text>
+    <rect x="200" y="14" width="32" height="20" rx="10" fill="#1c253d"/>
+    <text x="212" y="28" fill="#10b981" font-size="11">22</text>
+
+    <!-- Card 1 -->
+    <rect x="15" y="50" width="220" height="145" rx="8" fill="#162822" stroke="#1d4835"/>
+    <text x="30" y="78" fill="#ffffff" font-size="14" font-weight="700">OmniCorp Global</text>
+    <text x="30" y="102" fill="#34d399" font-size="18" font-weight="800">,000/yr</text>
+    <text x="30" y="128" fill="#94a3b8" font-size="11">Signed via DocuSign</text>
+    <rect x="30" y="150" width="110" height="22" rx="4" fill="#10b981"/>
+    <text x="38" y="165" fill="#ffffff" font-size="10" font-weight="700">✓ ONBOARDED</text>
+  </g>
+</svg>

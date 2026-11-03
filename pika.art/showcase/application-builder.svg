@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#0b0d14;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <defs>
+    <linearGradient id="app-chart-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect x="40" y="35" width="1120" height="830" rx="16" fill="#111420" stroke="#1f2438" stroke-width="1.5"/>
+  <!-- Top Bar -->
+  <rect x="40" y="35" width="1120" height="52" rx="16" fill="#161a2b"/>
+  <circle cx="74" cy="61" r="6" fill="#ef4444"/>
+  <circle cx="96" cy="61" r="6" fill="#eab308"/>
+  <circle cx="118" cy="61" r="6" fill="#22c55e"/>
+  <text x="540" y="66" fill="#94a3b8" font-size="13" font-weight="500">Sai Cloud Application Studio v3.2</text>
+  <rect x="1040" y="49" width="100" height="26" rx="6" fill="#3b82f6"/>
+  <text x="1055" y="66" fill="#ffffff" font-size="12" font-weight="600">Deploy App</text>
+
+  <!-- Sidebar -->
+  <rect x="40" y="87" width="210" height="778" fill="#0d101a" stroke="#1b1f30" stroke-width="1"/>
+  <text x="70" y="130" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1">MODULES</text>
+  
+  <rect x="60" y="145" width="170" height="36" rx="8" fill="#1e2538"/>
+  <text x="75" y="168" fill="#ffffff" font-size="13" font-weight="600">📊 Dashboard</text>
+  <text x="75" y="206" fill="#94a3b8" font-size="13">📈 Analytics</text>
+  <text x="75" y="244" fill="#94a3b8" font-size="13">👥 Users &amp; Roles</text>
+  <text x="75" y="282" fill="#94a3b8" font-size="13">🔑 API &amp; Webhooks</text>
+  <text x="75" y="320" fill="#94a3b8" font-size="13">⚡ Serverless APIs</text>
+  <text x="75" y="358" fill="#94a3b8" font-size="13">⚙️ Settings</text>
+
+  <!-- Main Workspace: Split View (Code on Left, SaaS App on Right) -->
+  <!-- Left Half: React / Node.js Code Pane -->
+  <g transform="translate(265, 105)">
+    <rect x="0" y="0" width="430" height="735" rx="10" fill="#0a0c14" stroke="#1a1e30" stroke-width="1"/>
+    <rect x="0" y="0" width="430" height="38" rx="10" fill="#131624"/>
+    <text x="20" y="24" fill="#cbd5e1" font-size="12" font-family="monospace">App.tsx</text>
+    <rect x="80" y="10" width="8" height="16" fill="#3b82f6" fill-opacity="0.3"/>
+    <text x="100" y="24" fill="#64748b" font-size="12" font-family="monospace">api/trpc.ts</text>
+    
+    <text x="20" y="70" fill="#f43f5e" font-size="12" font-family="monospace">import</text>
+    <text x="70" y="70" fill="#cbd5e1" font-size="12" font-family="monospace">{ useState, useEffect } </text>
+    <text x="245" y="70" fill="#f43f5e" font-size="12" font-family="monospace">from</text>
+    <text x="285" y="70" fill="#10b981" font-size="12" font-family="monospace">'react';</text>
+
+    <text x="20" y="98" fill="#f43f5e" font-size="12" font-family="monospace">import</text>
+    <text x="70" y="98" fill="#cbd5e1" font-size="12" font-family="monospace">{ useQuery } </text>
+    <text x="165" y="98" fill="#f43f5e" font-size="12" font-family="monospace">from</text>
+    <text x="205" y="98" fill="#10b981" font-size="12" font-family="monospace">'@tanstack/react-query';</text>
+
+    <text x="20" y="140" fill="#3b82f6" font-size="12" font-family="monospace">export function</text>
+    <text x="135" y="140" fill="#eab308" font-size="12" font-family="monospace">Dashboard() {</text>
+    
+    <text x="35" y="168" fill="#3b82f6" font-size="12" font-family="monospace">const</text>
+    <text x="75" y="168" fill="#cbd5e1" font-size="12" font-family="monospace">{ data: metrics } = </text>
+    <text x="225" y="168" fill="#eab308" font-size="12" font-family="monospace">useMetrics();</text>
+    
+    <text x="35" y="205" fill="#64748b" font-size="12" font-family="monospace">// Live telemetry sync</text>
+    <text x="35" y="230" fill="#3b82f6" font-size="12" font-family="monospace">return</text>
+    <text x="85" y="230" fill="#cbd5e1" font-size="12" font-family="monospace">(</text>
+    <text x="50" y="255" fill="#38bdf8" font-size="12" font-family="monospace">&lt;div</text>
+    <text x="85" y="255" fill="#a855f7" font-size="12" font-family="monospace">className=</text>
+    <text x="155" y="255" fill="#10b981" font-size="12" font-family="monospace">"grid grid-cols-2"</text>
+    <text x="285" y="255" fill="#38bdf8" font-size="12" font-family="monospace">&gt;</text>
+    
+    <text x="65" y="285" fill="#38bdf8" font-size="12" font-family="monospace">&lt;MetricCard</text>
+    <text x="75" y="310" fill="#a855f7" font-size="12" font-family="monospace">title=</text>
+    <text x="115" y="310" fill="#10b981" font-size="12" font-family="monospace">"Monthly Recurring Revenue"</text>
+    <text x="75" y="335" fill="#a855f7" font-size="12" font-family="monospace">value=</text>
+    <text x="120" y="335" fill="#cbd5e1" font-size="12" font-family="monospace">{metrics.mrr}</text>
+    <text x="75" y="360" fill="#a855f7" font-size="12" font-family="monospace">trend=</text>
+    <text x="120" y="360" fill="#10b981" font-size="12" font-family="monospace">"+24.6%"</text>
+    <text x="65" y="385" fill="#38bdf8" font-size="12" font-family="monospace">/&gt;</text>
+
+    <!-- Terminal at bottom of code pane -->
+    <rect x="10" y="480" width="410" height="240" rx="8" fill="#08090f" stroke="#1b1f30"/>
+    <text x="25" y="510" fill="#22c55e" font-size="12" font-family="monospace">✓ Frontend built in 340ms</text>
+    <text x="25" y="535" fill="#22c55e" font-size="12" font-family="monospace">✓ Serverless endpoints deployed (us-east)</text>
+    <text x="25" y="560" fill="#38bdf8" font-size="12" font-family="monospace">ℹ Auth provider connected: OAuth2 + MFA</text>
+    <text x="25" y="590" fill="#a855f7" font-size="12" font-family="monospace">$ prisma migrate deploy</text>
+    <text x="25" y="615" fill="#cbd5e1" font-size="12" font-family="monospace">Database schema synced in 18ms</text>
+    <text x="25" y="650" fill="#4ade80" font-size="13" font-family="monospace">Ready: http://localhost:3000</text>
+  </g>
+
+  <!-- Right Half: Live Application Preview -->
+  <g transform="translate(710, 105)">
+    <rect x="0" y="0" width="435" height="735" rx="10" fill="#131726" stroke="#22273d" stroke-width="1"/>
+    <rect x="0" y="0" width="435" height="42" rx="10" fill="#181e33"/>
+    <circle cx="20" cy="21" r="4" fill="#22c55e"/>
+    <text x="32" y="25" fill="#cbd5e1" font-size="12" font-weight="600">Application Preview (Live)</text>
+    <rect x="330" y="8" width="90" height="24" rx="12" fill="#22c55e" fill-opacity="0.15"/>
+    <text x="343" y="24" fill="#4ade80" font-size="11" font-weight="600">200 OK</text>
+
+    <!-- Top Metric Cards -->
+    <rect x="20" y="60" width="185" height="95" rx="10" fill="#1c223a" stroke="#2b3354"/>
+    <text x="35" y="88" fill="#94a3b8" font-size="12">Total Revenue</text>
+    <text x="35" y="122" fill="#ffffff" font-size="24" font-weight="700">,920</text>
+    <text x="135" y="122" fill="#22c55e" font-size="12" font-weight="600">+18.4%</text>
+
+    <rect x="225" y="60" width="185" height="95" rx="10" fill="#1c223a" stroke="#2b3354"/>
+    <text x="240" y="88" fill="#94a3b8" font-size="12">Active Users</text>
+    <text x="240" y="122" fill="#ffffff" font-size="24" font-weight="700">42,109</text>
+    <text x="345" y="122" fill="#22c55e" font-size="12" font-weight="600">+31.2%</text>
+
+    <!-- Growth Graph Card -->
+    <rect x="20" y="175" width="390" height="240" rx="10" fill="#1c223a" stroke="#2b3354"/>
+    <text x="35" y="205" fill="#ffffff" font-size="14" font-weight="600">Platform Traffic &amp; API Ingestion</text>
+    
+    <!-- SVG Area Chart -->
+    <path d="M 35 360 L 35 320 Q 90 300 130 280 T 230 240 T 320 200 T 390 190 L 390 360 Z" fill="url(#app-chart-grad)"/>
+    <path d="M 35 320 Q 90 300 130 280 T 230 240 T 320 200 T 390 190" fill="none" stroke="#38bdf8" stroke-width="3"/>
+    <circle cx="390" cy="190" r="5" fill="#38bdf8"/>
+    
+    <!-- X-axis labels -->
+    <text x="40" y="385" fill="#64748b" font-size="11">Jan</text>
+    <text x="110" y="385" fill="#64748b" font-size="11">Feb</text>
+    <text x="180" y="385" fill="#64748b" font-size="11">Mar</text>
+    <text x="250" y="385" fill="#64748b" font-size="11">Apr</text>
+    <text x="320" y="385" fill="#64748b" font-size="11">May</text>
+    <text x="380" y="385" fill="#64748b" font-size="11">Jun</text>
+
+    <!-- Customer Activity Feed -->
+    <rect x="20" y="435" width="390" height="280" rx="10" fill="#1c223a" stroke="#2b3354"/>
+    <text x="35" y="468" fill="#ffffff" font-size="14" font-weight="600">Realtime Activity</text>
+    
+    <g transform="translate(35, 490)">
+      <circle cx="16" cy="16" r="16" fill="#3b82f6" fill-opacity="0.2"/>
+      <text x="9" y="21" fill="#60a5fa" font-size="13">👤</text>
+      <text x="45" y="15" fill="#e2e8f0" font-size="13" font-weight="500">Enterprise SSO login by Sarah Connor</text>
+      <text x="45" y="30" fill="#64748b" font-size="11">2 seconds ago • IP 192.88.99.1</text>
+    </g>
+
+    <g transform="translate(35, 545)">
+      <circle cx="16" cy="16" r="16" fill="#10b981" fill-opacity="0.2"/>
+      <text x="9" y="21" fill="#34d399" font-size="13">💳</text>
+      <text x="45" y="15" fill="#e2e8f0" font-size="13" font-weight="500">New subscription ,200/mo (Acme Corp)</text>
+      <text x="45" y="30" fill="#64748b" font-size="11">42 seconds ago • Stripe Webhook</text>
+    </g>
+
+    <g transform="translate(35, 600)">
+      <circle cx="16" cy="16" r="16" fill="#a855f7" fill-opacity="0.2"/>
+      <text x="9" y="21" fill="#c084fc" font-size="13">🚀</text>
+      <text x="45" y="15" fill="#e2e8f0" font-size="13" font-weight="500">Production build deployed automatically</text>
+      <text x="45" y="30" fill="#64748b" font-size="11">3 minutes ago • GitHub Actions</text>
+    </g>
+  </g>
+</svg>
