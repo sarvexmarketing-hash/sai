@@ -2,8 +2,6 @@ server.py
 previews.py
 agent_engine.py
 workspace/
-.git
-.github
 *.py
 *.log
 cdn.pika.art/v2/files/

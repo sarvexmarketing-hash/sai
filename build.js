@@ -58,36 +58,26 @@ if (fs.existsSync(cmsSrc)) {
   copyDirSync(cmsSrc, cmsDest);
 }
 
-// 6. Copy thumbnail uploads (only images, skip giant raw mp4s > 10MB)
-const uploadsSrc = path.join(rootDir, 'cdn.pika.art', 'v2', 'creation', 'uploads');
-const uploadsDest = path.join(distDir, 'v2', 'creation', 'uploads');
-function copyUploadsSafe(src, dest) {
-  if (!fs.existsSync(src)) return;
-  fs.mkdirSync(dest, { recursive: true });
-  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
-    const s = path.join(src, entry.name);
-    const d = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyUploadsSafe(s, d);
-    } else {
-      const stat = fs.statSync(s);
-      // Skip large video files (> 8MB) that are not used by the landing page
-      if (stat.size < 8 * 1024 * 1024) {
-        fs.copyFileSync(s, d);
-      }
-    }
-  }
-}
-if (fs.existsSync(uploadsSrc)) {
-  console.log('Copying safe thumbnail uploads...');
-  copyUploadsSafe(uploadsSrc, uploadsDest);
-}
-
-// 7. Copy profile assets
+// 6. Copy profile assets
 const profilesSrc = path.join(rootDir, 'cdn.pika.art', 'assets');
 const profilesDest = path.join(distDir, 'assets');
 if (fs.existsSync(profilesSrc)) {
   copyDirSync(profilesSrc, profilesDest);
 }
 
-console.log('Build completed successfully!');
+// 7. Generate native .vercel/output for Build Output API v3
+const vercelOutputDir = path.join(rootDir, '.vercel', 'output');
+const vercelStaticDir = path.join(vercelOutputDir, 'static');
+if (fs.existsSync(vercelOutputDir)) {
+  fs.rmSync(vercelOutputDir, { recursive: true, force: true });
+}
+fs.mkdirSync(vercelStaticDir, { recursive: true });
+copyDirSync(distDir, vercelStaticDir);
+fs.writeFileSync(path.join(vercelOutputDir, 'config.json'), JSON.stringify({
+  version: 3,
+  routes: [
+    { handle: 'filesystem' }
+  ]
+}, null, 2));
+
+console.log('Build completed successfully with Build Output API v3!');
