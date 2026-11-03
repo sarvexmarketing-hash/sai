@@ -1,10 +1,10 @@
 {
-  "name": "pika-art-local",
+  "name": "sai-technologies",
   "version": "1.0.0",
-  "description": "Local server for mirrored pika.art website",
+  "description": "Sai Technologies - Autonomous Full-Stack AI Software Development Platform",
   "scripts": {
+    "build": "node build.js",
     "start": "python3 server.py 3000",
     "dev": "python3 server.py 3000"
   }
 }
-

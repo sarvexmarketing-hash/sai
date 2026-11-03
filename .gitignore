@@ -3,6 +3,6 @@ __pycache__/
 *.pyc
 scratch_*
 IMG_5649.MP4
-hero-video.mp4
 *.log
+dist/
 
