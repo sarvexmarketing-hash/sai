@@ -297,6 +297,7 @@ class PikaReplicationHandler(BaseHTTPRequestHandler):
         enhancement = """
         <style>
           video { opacity: 1 !important; }
+          #club, #research, section[aria-labelledby="_S_2_"], [aria-labelledby="_S_2_"], [class*="FooterLogotype"], svg:has(defs #footer-logotype-fluid) { display: none !important; }
           #workflow, #community { display: block !important; opacity: 1 !important; visibility: visible !important; }
           #introducing-sai, #about-company { display: block !important; visibility: visible !important; opacity: 1 !important; }
           @keyframes saiMarquee {
