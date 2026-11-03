@@ -6,11 +6,7 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/workspace",
-      "destination": "/workspace.html"
-    },
-    {
-      "source": "/workspace/(.*)",
+      "source": "/workspace/:match*",
       "destination": "/workspace.html"
     }
   ]
