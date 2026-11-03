@@ -21,22 +21,20 @@ function copyDirSync(src, dest) {
 
 console.log('Building public directory for Vercel deployment...');
 
-// 1. Recreate public directory
+// 1. Recreate clean public directory
 if (fs.existsSync(publicDir)) {
   fs.rmSync(publicDir, { recursive: true, force: true });
 }
 fs.mkdirSync(publicDir, { recursive: true });
 
-// 2. Copy root files to public/
+// 2. Copy root files to public/ (without duplicate workspace.html)
 const filesToCopy = [
   'index.html',
-  'workspace.html',
   'hero-video.mp4',
   'icons.svg',
   'icon.svg',
   'gsap.min.js',
-  'ScrollTrigger.min.js',
-  'unleash.html'
+  'ScrollTrigger.min.js'
 ];
 for (const file of filesToCopy) {
   const src = path.join(rootDir, file);
@@ -56,7 +54,7 @@ for (const dir of dirsToCopy) {
   }
 }
 
-// 4. Create public/workspace/index.html
+// 4. Create public/workspace/index.html (clean /workspace route without collision)
 const workspaceDir = path.join(publicDir, 'workspace');
 fs.mkdirSync(workspaceDir, { recursive: true });
 const wsHtml = path.join(rootDir, 'workspace.html');
