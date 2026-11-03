@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Sai Technologies - Autonomous Full-Stack AI Software Development Platform",
   "scripts": {
-    "build": "node build.js",
-    "start": "python3 server.py 3000",
-    "dev": "python3 server.py 3000"
+    "build": "node build.js"
   },
   "engines": {
     "node": "26.x"
