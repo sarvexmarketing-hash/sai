@@ -69,21 +69,20 @@
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="Pixbee" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="/icon.svg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="/assets/pixbee-logo.jpg" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="576" />
     <meta property="og:image:alt" content="Pixbee: AI Creative Tools for Video, Image &amp; Audio" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pixbee: AI Creative Tools for Video, Image &amp; Audio" />
     <meta name="twitter:description" content="Build responsive websites, powerful web apps, CRM, ERP, and mobile applications with Pixbee autonomous AI platform." />
-    <meta name="twitter:image" content="/icon.svg" />
+    <meta name="twitter:image" content="/assets/pixbee-logo.jpg" />
     <meta name="twitter:image:alt" content="Pixbee: AI Creative Tools for Video, Image &amp; Audio" />
-    <meta name="twitter:image:width" content="1200" />
-    <meta name="twitter:image:height" content="630" />
-    <link rel="icon" href="/favicon.ico?favicon.03qzqgaru0by8.ico" sizes="48x48" type="image/x-icon" />
-    <link rel="icon" href="/icon.svg?icon.3bty87qirfeg8.svg" sizes="any" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-icon.png?apple-icon.1pc-f1mhs57mu.png" sizes="180x180" type="image/png" />
+    <meta name="twitter:image:width" content="1024" />
+    <meta name="twitter:image:height" content="576" />
+    <link rel="icon" href="/assets/pixbee-icon-dark.png" sizes="any" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/pixbee-icon-dark.png" sizes="180x180" type="image/png" />
     <script>
         (self.__next_s = self.__next_s || []).push([0, {
             "children": "(function(){if([\"/privacy-policy\",\"/terms-of-service\",\"/acceptable-use-policy\",\"/robots.txt\",\"/sitemap.xml\",\"/llms.txt\",\"/blog/feed.xml\"].indexOf(location.pathname)!==-1)return;function z(){var c=document.cookie.split(\"; \"),r=null;for(var i=0;i\u003cc.length;i++)if(c[i].indexOf(\"pika_ads_region=\")===0){try{r=decodeURIComponent(c[i].slice(16))}catch(e){}break}return r}if(z()!==\"us\")return;var d=\"ga-disable-G-7FM72SP0NE\";function o(){if(z()!==\"us\")window[d]=true}window.addEventListener(\"visibilitychange\",o,true);window.addEventListener(\"pagehide\",o,true);window.addEventListener(\"focus\",o,true);window.dataLayer=window.dataLayer||[];window.gtag=function gtag(){window.dataLayer.push(arguments)};gtag(\"js\",new Date());function w(h){try{var u=new URL(h);return u.protocol===\"https:\"||u.protocol===\"http:\"?u:null}catch(e){return null}}var p={page_title:\"Pika\"};try{var k=[\"utm_source\",\"utm_medium\",\"utm_campaign\",\"utm_term\",\"utm_content\",\"utm_id\",\"utm_source_platform\",\"utm_creative_format\",\"utm_marketing_tactic\",\"gclid\",\"gbraid\",\"wbraid\",\"gad_source\",\"gad_campaignid\",\"dclid\"],e=new RegExp(\"@|%(?:25)*40\",\"i\"),u=w(location.href),f=w(document.referrer),q=new URLSearchParams();if(u){u.searchParams.forEach(function(v,n){if(k.indexOf(n)!==-1\u0026\u0026!e.test(v))q.append(n,v)});var s=q.toString();p.page_location=u.origin+u.pathname+(s?\"?\"+s:\"\");p.page_referrer=f?f.origin+f.pathname:\"\"}}catch(e){}gtag(\"set\",p);gtag(\"config\",\"G-7FM72SP0NE\",{send_page_view:false});var t=document.createElement(\"script\");t.async=true;t.src=\"https://www.googletagmanager.com/gtag/js?id=G-7FM72SP0NE\";document.head.appendChild(t);})();",
@@ -99,6 +98,30 @@
     <script src="/next_assets/static/immutable/chunks/0c0hxoamwjsbw.js" noModule=""></script>
 
 <style id="header-dynamic-theme-css">
+/* =========================================================================
+   HEADER LOGO THEME SWITCHING
+   ========================================================================= */
+header[data-context="light"] .header-logo-dark,
+header[data-theme="light"] .header-logo-dark,
+header.is-light .header-logo-dark {
+    display: none !important;
+}
+header[data-context="light"] .header-logo-light,
+header[data-theme="light"] .header-logo-light,
+header.is-light .header-logo-light {
+    display: block !important;
+}
+
+header[data-context="dark"] .header-logo-dark,
+header[data-theme="dark"] .header-logo-dark,
+header.is-dark .header-logo-dark {
+    display: block !important;
+}
+header[data-context="dark"] .header-logo-light,
+header[data-theme="dark"] .header-logo-light,
+header.is-dark .header-logo-light {
+    display: none !important;
+}
 /* Smooth transition on header elements */
 header,
 header a,
@@ -460,7 +483,7 @@ html, body {
     <!--/$-->
     <div class="flex min-h-screen flex-col"><a href="#main-content" class="sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:rounded-sm focus:bg-primary-900 focus:px-4 focus:py-3 focus:text-invert-900 focus:[clip:auto]">Skip to main content</a>
         <header id="main-landing-header" data-theme="dark" data-context="dark" class="fixed inset-x-0 top-3 z-50 px-3 xl:top-6 xl:px-6 transition-colors duration-300">
-            <div class="grid h-11 grid-cols-[1fr_auto_1fr] items-center xl:h-12"><a id="header-logo" aria-label="Pixbee home" style="animation-delay:calc(var(--hero-intro-nav, 0ms) + 100ms)" class="col-start-2 row-start-1 animate-arrive-fade justify-self-center rounded-xs transition-colors duration-200 motion-reduce:transition-none xl:col-start-1 xl:justify-self-start text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eggshell/60" href="/"><svg viewBox="0 0 90 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pixbee" class="h-5 w-auto"><text x="0" y="15" fill="currentColor" font-family="Telka, -apple-system, sans-serif" font-weight="800" font-size="16" letter-spacing="1.5">PIXBEE</text></svg></a>
+            <div class="grid h-11 grid-cols-[1fr_auto_1fr] items-center xl:h-12"><a id="header-logo" aria-label="Pixbee home" style="animation-delay:calc(var(--hero-intro-nav, 0ms) + 100ms)" class="col-start-2 row-start-1 animate-arrive-fade justify-self-center rounded-xs transition-colors duration-200 motion-reduce:transition-none xl:col-start-1 xl:justify-self-start text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eggshell/60 flex items-center" href="/"><img src="/assets/pixbee-logo-dark.png" alt="Pixbee" class="h-8 md:h-9 w-auto object-contain header-logo-dark" /><img src="/assets/pixbee-logo-light.png" alt="Pixbee" class="h-8 md:h-9 w-auto object-contain header-logo-light hidden" /></a>
                 <div
                     class="justify-self-center max-xl:hidden">
                     <nav aria-label="Primary" class="relative hidden h-12 justify-center xl:flex">
@@ -2698,10 +2721,9 @@ html, body {
                             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-white/10">
                                 <div>
                                     <div class="flex items-center gap-3">
-                                        <div class="size-8 rounded-lg bg-linear-to-tr from-purple-600 to-indigo-500 flex items-center justify-center font-black text-white text-lg">P</div>
-                                        <span class="text-xl font-bold tracking-tight text-white uppercase">Pixbee</span>
+                                        <img src="/assets/pixbee-logo-dark.png" alt="Pixbee" class="h-10 w-auto object-contain" />
                                     </div>
-                                    <p class="mt-2 text-sm text-neutral-400 max-w-md">The autonomous AI software platform built for builders. Transform ideas into production-ready web and mobile applications.</p>
+                                    <p class="mt-3 text-sm text-neutral-400 max-w-md">The autonomous AI software platform built for builders. Transform ideas into production-ready web and mobile applications.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="size-10 rounded-full border border-white/15 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/40 transition-colors">
