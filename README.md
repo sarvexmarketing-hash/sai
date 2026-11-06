@@ -1,10 +1,10 @@
-# Sai Technologies
+# Pixbee
 
 > **Autonomous Full-Stack AI Software Development Platform**
 > 
 > *We build websites and apps.*
 
-Sai Technologies is a next-generation AI software platform designed for autonomous end-to-end development. Built around self-contained intelligent tools that turn your specifications into production applications.
+Pixbee is a next-generation AI software platform designed for autonomous end-to-end development. Built around self-contained intelligent tools that turn your specifications into production applications.
 
 ---
 
@@ -29,5 +29,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-© 2026 Sai Technologies. All rights reserved.
+© 2026 Pixbee. All rights reserved.
 
