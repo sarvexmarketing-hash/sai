@@ -140,14 +140,13 @@ header[data-context="light"] a[aria-label*="home"],
 header[data-theme="light"] a[aria-label*="home"],
 header.is-light a[aria-label*="home"],
 header[data-context="light"] #header-logo,
-header[data-theme="light"] #header-logo {
+header[data-theme="light"] #header-logo,
+header.is-light #header-logo {
     color: #1e1d1c !important;
 }
-header[data-context="light"] a[aria-label*="home"] svg text,
-header[data-theme="light"] a[aria-label*="home"] svg text,
-header.is-light a[aria-label*="home"] svg text,
-header[data-context="light"] #header-logo svg text,
-header[data-theme="light"] #header-logo svg text {
+header[data-context="light"] #header-logo *,
+header[data-theme="light"] #header-logo *,
+header.is-light #header-logo * {
     fill: #1e1d1c !important;
     color: #1e1d1c !important;
 }
@@ -241,14 +240,13 @@ header[data-context="dark"] a[aria-label*="home"],
 header[data-theme="dark"] a[aria-label*="home"],
 header.is-dark a[aria-label*="home"],
 header[data-context="dark"] #header-logo,
-header[data-theme="dark"] #header-logo {
+header[data-theme="dark"] #header-logo,
+header.is-dark #header-logo {
     color: #ffffff !important;
 }
-header[data-context="dark"] a[aria-label*="home"] svg text,
-header[data-theme="dark"] a[aria-label*="home"] svg text,
-header.is-dark a[aria-label*="home"] svg text,
-header[data-context="dark"] #header-logo svg text,
-header[data-theme="dark"] #header-logo svg text {
+header[data-context="dark"] #header-logo *,
+header[data-theme="dark"] #header-logo *,
+header.is-dark #header-logo * {
     fill: #ffffff !important;
     color: #ffffff !important;
 }
@@ -483,7 +481,7 @@ html, body {
     <!--/$-->
     <div class="flex min-h-screen flex-col"><a href="#main-content" class="sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:rounded-sm focus:bg-primary-900 focus:px-4 focus:py-3 focus:text-invert-900 focus:[clip:auto]">Skip to main content</a>
         <header id="main-landing-header" data-theme="dark" data-context="dark" class="fixed inset-x-0 top-3 z-50 px-3 xl:top-6 xl:px-6 transition-colors duration-300">
-            <div class="grid h-11 grid-cols-[1fr_auto_1fr] items-center xl:h-12"><a id="header-logo" aria-label="Pixbee home" style="animation-delay:calc(var(--hero-intro-nav, 0ms) + 100ms)" class="col-start-2 row-start-1 animate-arrive-fade justify-self-center rounded-xs transition-colors duration-200 motion-reduce:transition-none xl:col-start-1 xl:justify-self-start text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eggshell/60 flex items-center" href="/"><img src="/assets/pixbee-logo-dark.png" alt="Pixbee" class="h-8 md:h-9 w-auto object-contain header-logo-dark" /><img src="/assets/pixbee-logo-light.png" alt="Pixbee" class="h-8 md:h-9 w-auto object-contain header-logo-light hidden" /></a>
+            <div class="grid h-11 grid-cols-[1fr_auto_1fr] items-center xl:h-12"><a id="header-logo" aria-label="Pixbee home" style="animation-delay:calc(var(--hero-intro-nav, 0ms) + 100ms)" class="col-start-2 row-start-1 animate-arrive-fade justify-self-center rounded-xs transition-colors duration-200 motion-reduce:transition-none xl:col-start-1 xl:justify-self-start text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eggshell/60 flex items-center" href="/"><span class="font-display font-black text-xl tracking-[0.14em] uppercase select-none">PIXBEE</span></a>
                 <div
                     class="justify-self-center max-xl:hidden">
                     <nav aria-label="Primary" class="relative hidden h-12 justify-center xl:flex">
@@ -2721,7 +2719,7 @@ html, body {
                             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-white/10">
                                 <div>
                                     <div class="flex items-center gap-3">
-                                        <img src="/assets/pixbee-logo-dark.png" alt="Pixbee" class="h-10 w-auto object-contain" />
+                                        <span class="text-2xl font-black font-display tracking-tight text-white uppercase">PIXBEE</span>
                                     </div>
                                     <p class="mt-3 text-sm text-neutral-400 max-w-md">The autonomous AI software platform built for builders. Transform ideas into production-ready web and mobile applications.</p>
                                 </div>
